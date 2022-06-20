@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "next",
+    "prettier",
+    "next/core-web-vitals",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "@next/next/no-document-import-in-page": "off",
+    "prettier/prettier": [
+      "warn",
+      { "usePrettierrc": true }
+    ],
+    "no-undef": "error",
+    "no-unused-vars": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin","external","internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "next": {
+      "rootDir": "./src"
+    }
+  },
+  "env": {
+    "jest": true
+  }
+}
